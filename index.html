@@ -367,104 +367,173 @@
         }
 
         /* =========================
-           MARS ROVER FEATURE
-        ========================= */
+   MARS ROVER FEATURE
+========================= */
 
-        .rover-section {
-            background:
-                linear-gradient(135deg,
-                rgba(77,163,255,0.08),
-                rgba(66,211,146,0.04));
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
+.rover-section {
+    background:
+        linear-gradient(135deg,
+        rgba(77,163,255,0.08),
+        rgba(66,211,146,0.04));
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
 
-        .rover-feature {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 45px;
-            align-items: center;
-        }
+.rover-feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
 
-        .rover-badge {
-            display: inline-block;
-            color: var(--green);
-            background: rgba(66,211,146,0.09);
-            border: 1px solid rgba(66,211,146,0.2);
-            padding: 8px 14px;
-            border-radius: 999px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 18px;
-        }
+.rover-badge {
+    display: inline-block;
+    color: var(--green);
+    background: rgba(66,211,146,0.09);
+    border: 1px solid rgba(66,211,146,0.2);
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
 
-        .rover-title {
-            font-family: "Space Grotesk", sans-serif;
-            font-size: clamp(32px, 5vw, 52px);
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
+.rover-title {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
 
-        .rover-title span {
-            color: var(--primary);
-        }
+.rover-title span {
+    color: var(--primary);
+}
 
-        .rover-description {
-            color: var(--muted);
-            margin-bottom: 25px;
-        }
+.rover-description {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
 
-        .rover-list {
-            list-style: none;
-        }
+.rover-list {
+    list-style: none;
+}
 
-        .rover-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border);
-            color: #d8e5f3;
-        }
+.rover-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    color: #d8e5f3;
+}
 
-        .rover-list li::before {
-            content: "▹";
-            color: var(--primary);
-            margin-right: 10px;
-        }
+.rover-list li::before {
+    content: "▹";
+    color: var(--primary);
+    margin-right: 10px;
+}
 
-        .rover-panel {
-            background: #081525;
-            border: 1px solid rgba(77,163,255,0.2);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-        }
+.rover-panel {
+    background: #081525;
+    border: 1px solid rgba(77,163,255,0.2);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
 
-        .rover-panel h3 {
-            font-family: "Space Grotesk", sans-serif;
-            margin-bottom: 20px;
-        }
+.rover-panel h3 {
+    font-family: "Space Grotesk", sans-serif;
+    margin-bottom: 20px;
+}
 
-        .rover-role {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            padding: 15px 0;
-            border-bottom: 1px solid var(--border);
-        }
+.rover-role {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border);
+}
 
-        .rover-role:last-child {
-            border-bottom: none;
-        }
+.rover-role:last-child {
+    border-bottom: none;
+}
 
-        .rover-role strong {
-            color: var(--text);
-        }
+.rover-role strong {
+    color: var(--text);
+}
 
-        .rover-role span {
-            color: var(--muted);
-            text-align: right;
-        }
+.rover-role span {
+    color: var(--muted);
+    text-align: right;
+}
+
+
+/* =========================
+   MARS ROVER LINKS
+========================= */
+
+.rover-link-badge {
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.rover-link-badge:hover {
+    color: #ffffff;
+    border-color: rgba(66,211,146,0.45);
+    background: rgba(66,211,146,0.15);
+    transform: translateY(-2px);
+}
+
+.rover-inline-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.rover-inline-link:hover {
+    color: var(--green);
+}
+
+.rover-profile-btn {
+    display: inline-block;
+    margin-top: 25px;
+}
+        /* =========================
+   MARS ROVER RESPONSIVE
+========================= */
+
+@media (max-width: 850px) {
+
+    .rover-feature {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .rover-title {
+        font-size: clamp(32px, 9vw, 46px);
+    }
+
+    .rover-panel {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .rover-role {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .rover-role span {
+        text-align: left;
+    }
+
+    .rover-panel {
+        border-radius: 16px;
+        padding: 20px;
+    }
+}
 
         /* =========================
            PUBLICATIONS
@@ -785,7 +854,7 @@
     <div class="container nav-container">
 
         <a href="#home" class="logo">
-            Md Shaharia<span>.</span>
+            Md Shaharia<span>Hossen</span>
         </a>
 
         <ul class="nav-links">
@@ -866,7 +935,7 @@
 
                 <img
                     class="profile-photo"
-                    src="https://lh3.googleusercontent.com/-PYxQ-mWtyrs/AAAAAAAAAAI/AAAAAAAAAAA/W-csK8a5IFI/s96-c-mo/photo.jpg"
+                    src="Shaharia.png"
                     alt="Md Shaharia Hossen"
                 >
 
@@ -1003,7 +1072,7 @@
 
                 <p>
                     Autonomous robots, rover systems, multi-robot coordination,
-                    navigation, perception and exploration.
+                    navigation, perception, and exploration.
                 </p>
 
             </div>
@@ -1030,7 +1099,7 @@
                 <h3>Computer Vision</h3>
 
                 <p>
-                    Object detection, segmentation, visual perception and
+                    Object detection, segmentation, visual perception, and
                     vision-based robotic systems.
                 </p>
 
@@ -1045,7 +1114,7 @@
 
                 <p>
                     Multiomics integration, spatial transcriptomics,
-                    graph learning and computational biology.
+                    graph learning, and computational biology.
                 </p>
 
             </div>
@@ -1069,9 +1138,14 @@
 
             <div>
 
-                <div class="rover-badge">
-                    Former Mars Rover Team Member
-                </div>
+                <a
+                    href="https://uiumarsrover.org/team/competition/member2024.html?slug=shahariar-hossen"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="rover-badge rover-link-badge"
+                >
+                    Former Mars Rover Team Member ↗
+                </a>
 
                 <h2 class="rover-title">
                     From Mars Rover<br>
@@ -1081,9 +1155,16 @@
                 <p class="rover-description">
 
                     I was a member of the
-                    <strong>UIU Mars Rover Team (UMRT)</strong>
-                    and contributed to the team's robotics activities since
-                    2022, including the autonomous and navigation work for
+                    <a
+                        href="https://uiumarsrover.org/team/competition/member2024.html?slug=shahariar-hossen"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="rover-inline-link"
+                    >
+                        <strong>UIU Mars Rover Team (UMRT)</strong>
+                    </a>
+                    from 2023–2025 and contributed to robotics activities,
+                    including autonomous and navigation work for
                     international rover competitions.
 
                 </p>
@@ -1091,11 +1172,21 @@
                 <ul class="rover-list">
 
                     <li>
-                        UIU Mars Rover Team — Member since 2022
+                        <strong>UIU Mars Rover Team — 2023–2025</strong>
                     </li>
 
                     <li>
-                        URC 2024 — Autonomous & Navigation Sub-Team
+                        <strong>
+                            <a
+                                href="https://uiumarsrover.org/team/competition/member2024.html?slug=shahariar-hossen"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="rover-inline-link"
+                            >
+                                URC 2024
+                            </a>
+                        </strong>
+                        — Autonomous & Navigation Sub-Team
                     </li>
 
                     <li>
@@ -1107,7 +1198,7 @@
                     </li>
 
                     <li>
-                        Experience with sensors, cameras and embedded systems
+                        Experience with sensors, cameras, and embedded systems
                     </li>
 
                     <li>
@@ -1115,6 +1206,19 @@
                     </li>
 
                 </ul>
+
+                <div style="margin-top: 25px;">
+
+                    <a
+                        href="https://uiumarsrover.org/team/competition/member2024.html?slug=shahariar-hossen"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-primary"
+                    >
+                        View My Mars Rover Profile ↗
+                    </a>
+
+                </div>
 
             </div>
 
@@ -1130,7 +1234,24 @@
                     <strong>Team</strong>
 
                     <span>
-                        UIU Mars Rover Team
+                        <a
+                            href="https://uiumarsrover.org/team/competition/member2024.html?slug=shahariar-hossen"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="rover-inline-link"
+                        >
+                            UIU Mars Rover Team ↗
+                        </a>
+                    </span>
+
+                </div>
+
+                <div class="rover-role">
+
+                    <strong>Period</strong>
+
+                    <span>
+                        2023–2025
                     </span>
 
                 </div>
@@ -1141,6 +1262,23 @@
 
                     <span>
                         Former Team Member
+                    </span>
+
+                </div>
+
+                <div class="rover-role">
+
+                    <strong>Competition</strong>
+
+                    <span>
+                        <a
+                            href="https://uiumarsrover.org/team/competition/member2024.html?slug=shahariar-hossen"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="rover-inline-link"
+                        >
+                            URC 2024 ↗
+                        </a>
                     </span>
 
                 </div>
@@ -1192,8 +1330,6 @@
     </div>
 
 </section>
-
-
 <!-- =====================================================
      GOOGLE SCHOLAR METRICS
 ===================================================== -->
@@ -1998,7 +2134,7 @@
                 </p>
 
                 <p>
-                    CGPA: 3.14 / 4.00
+                    Graduation Year: 2025
                 </p>
 
                 <p>
@@ -2006,7 +2142,7 @@
                 </p>
 
                 <p>
-                    Project Management — A− / 3.67
+                    Thesis: AI, Bioinformatics - Grade - A
                 </p>
 
             </div>
