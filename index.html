@@ -117,8 +117,156 @@
             color: var(--text);
         }
 
-       
-        
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 80px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 13px;
+            border: 1px solid rgba(77,163,255,0.25);
+            background: var(--primary-soft);
+            border-radius: 999px;
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 22px;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 10px rgba(66,211,146,0.7);
+        }
+
+        .hero h1 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(46px, 7vw, 78px);
+            line-height: 1.02;
+            letter-spacing: -3px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            color: #d7e5f5;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            color: var(--muted);
+            max-width: 720px;
+            font-size: 16px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.25s;
+            border: 1px solid var(--border);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #03101e;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(77,163,255,0.25);
+        }
+
+        .btn-outline {
+            background: rgba(255,255,255,0.03);
+            color: var(--text);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.07);
+        }
+
+        /* =========================
+           PROFILE PHOTO
+        ========================= */
+
+        .profile-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-card {
+            position: relative;
+            width: 330px;
+            padding: 15px;
+            border-radius: 28px;
+
+            background:
+                linear-gradient(145deg,
+                rgba(77,163,255,0.16),
+                rgba(255,255,255,0.025));
+
+            border: 1px solid rgba(77,163,255,0.25);
+            box-shadow: var(--shadow);
+        }
+
+        .profile-photo {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 20px;
+            background: #102237;
+        }
+
+        .profile-caption {
+            padding: 18px 8px 5px;
+            text-align: center;
+        }
+
+        .profile-caption strong {
+            display: block;
+            font-size: 18px;
+        }
+
+        .profile-caption span {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
         /* =========================
            SECTION
         ========================= */
@@ -721,311 +869,99 @@
     </div>
 </nav>
 
-/* =====================================================
-   HERO SECTION
-===================================================== */
 
-.hero {
-    position: relative;
-    min-height: 92vh;
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-    display: flex;
-    align-items: center;
+<header class="hero" id="home">
 
-    overflow: hidden;
+    <div class="container hero-grid">
 
-    background:
-        radial-gradient(
-            circle at 75% 45%,
-            rgba(77, 163, 255, 0.12),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 20% 80%,
-            rgba(66, 211, 146, 0.06),
-            transparent 28%
-        ),
-        #050b14;
-}
+        <div>
 
+            <div class="eyebrow">
+                <span class="status-dot"></span>
+                Student Researcher at ELITE Lab
+            </div>
 
-/* =====================================================
-   ANIMATED BACKGROUND GRID
-===================================================== */
+            <h1>
+                Md Shaharia<br>
+                <span>Hossen</span>
+            </h1>
 
-.hero-grid-bg {
-    position: absolute;
+            <div class="hero-subtitle">
+                AI & Robotics Researcher
+            </div>
 
-    inset: -20%;
+            <p class="hero-description">
+                Computer Science and Engineering graduate working across
+                robotics, artificial intelligence, automation, computer vision,
+                and computational biology. My research interests focus on
+                intelligent autonomous systems and interdisciplinary applications
+                of AI.
+            </p>
 
-    background-image:
-        linear-gradient(
-            rgba(77, 163, 255, 0.045) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(77, 163, 255, 0.045) 1px,
-            transparent 1px
-        );
+            <div class="hero-buttons">
 
-    background-size: 55px 55px;
+                <a class="btn btn-primary"
+                   href="https://scholar.google.com/citations?user=IE9DWgQAAAAJ&hl=en"
+                   target="_blank">
+                    Google Scholar
+                </a>
+                <a class="btn btn-outline"
+                   href="https://www.linkedin.com/in/md-shaharia-hossen/"
+                   target="_blank">
+                    LinkedIn
+                </a>
 
-    transform:
-        perspective(600px)
-        rotateX(58deg)
-        scale(1.4);
+                <a class="btn btn-outline"
+                   href="https://orcid.org/0009-0009-8692-811X"
+                   target="_blank">
+                    ORCID
+                </a>
 
-    transform-origin: center bottom;
+                <a class="btn btn-outline"
+                   href="https://github.com/Md-Shaharia-Hossen"
+                   target="_blank">
+                    GitHub
+                </a>
 
-    opacity: 0.8;
+            </div>
 
-    animation:
-        heroGridMove 14s linear infinite;
+        </div>
 
-    pointer-events: none;
-}
 
+        <!-- ACTUAL PROFILE PHOTO -->
 
-@keyframes heroGridMove {
+        <div class="profile-wrapper">
 
-    from {
-        background-position:
-            0 0,
-            0 0;
-    }
+            <div class="profile-card">
 
-    to {
-        background-position:
-            0 55px,
-            55px 0;
-    }
-}
+                <img
+                    class="profile-photo"
+                    src="Shaharia.png"
+                    alt="Md Shaharia Hossen"
+                >
 
+                <div class="profile-caption">
 
-/* =====================================================
-   BACKGROUND GLOW
-===================================================== */
+                    <strong>Md Shaharia Hossen</strong>
 
-.hero-glow {
-    position: absolute;
+                    <span>
+                        Student Researcher · Robotics · AI
+                    </span>
 
-    width: 400px;
-    height: 400px;
+                </div>
 
-    border-radius: 50%;
+            </div>
 
-    filter: blur(100px);
+        </div>
 
-    pointer-events: none;
+    </div>
 
-    opacity: 0.12;
-}
+</header>
 
-
-.hero-glow-1 {
-    top: 10%;
-    right: 5%;
-
-    background: var(--primary);
-
-    animation:
-        glowMoveOne 7s ease-in-out infinite;
-}
-
-
-.hero-glow-2 {
-    bottom: 5%;
-    left: 5%;
-
-    background: var(--green);
-
-    animation:
-        glowMoveTwo 9s ease-in-out infinite;
-}
-
-
-@keyframes glowMoveOne {
-
-    0%,
-    100% {
-        transform: translate(0, 0);
-    }
-
-    50% {
-        transform: translate(-40px, 30px);
-    }
-}
-
-
-@keyframes glowMoveTwo {
-
-    0%,
-    100% {
-        transform: translate(0, 0);
-    }
-
-    50% {
-        transform: translate(40px, -30px);
-    }
-}
-
-
-    
- /* /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 120px 0 80px;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.3fr 0.7fr;
-            gap: 70px;
-            align-items: center;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 7px 13px;
-            border: 1px solid rgba(77,163,255,0.25);
-            background: var(--primary-soft);
-            border-radius: 999px;
-            color: var(--primary);
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 22px;
-        }
-
-        .status-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--green);
-            box-shadow: 0 0 10px rgba(66,211,146,0.7);
-        }
-
-        .hero h1 {
-            font-family: "Space Grotesk", sans-serif;
-            font-size: clamp(46px, 7vw, 78px);
-            line-height: 1.02;
-            letter-spacing: -3px;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: var(--primary);
-        }
-
-        .hero-subtitle {
-            font-size: 22px;
-            color: #d7e5f5;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
-
-        .hero-description {
-            color: var(--muted);
-            max-width: 720px;
-            font-size: 16px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 13px;
-            margin-top: 30px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 20px;
-            border-radius: 10px;
-            font-size: 14px;
-            font-weight: 600;
-            transition: 0.25s;
-            border: 1px solid var(--border);
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: #03101e;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(77,163,255,0.25);
-        }
-
-        .btn-outline {
-            background: rgba(255,255,255,0.03);
-            color: var(--text);
-        }
-
-        .btn-outline:hover {
-            background: rgba(255,255,255,0.07);
-        } */
-
-/* =========================
-           PROFILE PHOTO
-        ========================= */
-
-        .profile-wrapper {
-            display: flex;
-            justify-content: center;
-        }
-
-        .profile-card {
-            position: relative;
-            width: 330px;
-            padding: 15px;
-            border-radius: 28px;
-
-            background:
-                linear-gradient(145deg,
-                rgba(77,163,255,0.16),
-                rgba(255,255,255,0.025));
-
-            border: 1px solid rgba(77,163,255,0.25);
-            box-shadow: var(--shadow);
-        }
-
-        .profile-photo {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            border-radius: 20px;
-            background: #102237;
-        }
-
-        .profile-caption {
-            padding: 18px 8px 5px;
-            text-align: center;
-        }
-
-        .profile-caption strong {
-            display: block;
-            font-size: 18px;
-        }
-
-        .profile-caption span {
-            color: var(--muted);
-            font-size: 13px;
-        }
-
-
-<!-- ===================================================== HERO ===================================================== --> 
-    <header class="hero" id="home"> <div class="container hero-grid"> <div> <div class="eyebrow"> <span class="status-dot"></span> Student Researcher at ELITE Research Lab </div> <h1> Md Shaharia<br> <span>Hossen</span> </h1> <div class="hero-subtitle"> AI & Robotics Researcher </div> <p class="hero-description"> Computer Science and Engineering graduate working across robotics, artificial intelligence, robotics & automation, and computational biology. My research interests focus on intelligent autonomous systems and interdisciplinary applications of AI. </p> <div class="hero-buttons"> <a class="btn btn-primary" href="https://scholar.google.com/citations?user=IE9DWgQAAAAJ&hl=en" target="_blank"> Google Scholar </a> <a class="btn btn-outline" href="https://www.linkedin.com/in/md-shaharia-hossen/" target="_blank"> LinkedIn </a> <a class="btn btn-outline" href="https://orcid.org/0009-0009-8692-811X" target="_blank"> ORCID </a> <a class="btn btn-outline" href="https://github.com/Md-Shaharia-Hossen" target="_blank"> GitHub </a> </div> </div> <!-- ACTUAL PROFILE PHOTO --> <div class="profile-wrapper"> <div class="profile-card"> <img class="profile-photo" src="Shaharia.png" alt="Md Shaharia Hossen" > <div class="profile-caption"> <strong>Md Shaharia Hossen</strong> <span> Student Researcher · Robotics · AI </span> </div> </div> </div> </div> </header>
- 
    <!-- =====================================================
      EXPERIENCE
 ===================================================== -->
