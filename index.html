@@ -1,10 +1,2637 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First GitHub Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Md Shaharia Hossen | AI & Robotics Researcher</title>
+
+    <meta name="description"
+          content="Md Shaharia Hossen - AI and Robotics Researcher working on robotics, ROS/ROS2, computer vision, deep learning, multiomics, spatial transcriptomics, and autonomous systems.">
+
+    <meta name="keywords"
+          content="Md Shaharia Hossen, Robotics, AI, Machine Learning, Computer Vision, ROS, ROS2, Multiomics, Spatial Transcriptomics, Deep Learning, Bangladesh">
+
+    <meta name="author" content="Md Shaharia Hossen">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg: #07111f;
+            --bg2: #0b1728;
+            --card: #0f1d30;
+            --card2: #12243a;
+            --text: #e8eef7;
+            --muted: #9eafc4;
+            --accent: #4da3ff;
+            --accent2: #7c5cff;
+            --border: rgba(255,255,255,0.09);
+            --green: #43d17a;
+            --shadow: 0 20px 50px rgba(0,0,0,0.25);
+        }
+
+        body {
+            font-family:
+                Inter,
+                ui-sans-serif,
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+            background:
+                radial-gradient(circle at 15% 10%, rgba(77,163,255,0.10), transparent 28%),
+                radial-gradient(circle at 85% 20%, rgba(124,92,255,0.10), transparent 28%),
+                var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            width: min(1150px, 92%);
+            margin: auto;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(18px);
+            background: rgba(7,17,31,0.78);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: 0.9rem;
+            transition: 0.25s;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            padding: 90px 0;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.35fr 0.65fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 13px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            background: rgba(255,255,255,0.035);
+            color: var(--muted);
+            font-size: 0.82rem;
+            margin-bottom: 22px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 12px var(--green);
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 6rem);
+            line-height: 0.98;
+            letter-spacing: -4px;
+            margin-bottom: 22px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(
+                100deg,
+                var(--accent),
+                #9d7cff,
+                #64d8ff
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.2rem, 2vw, 1.7rem);
+            font-weight: 500;
+            color: var(--muted);
+            margin-bottom: 22px;
+        }
+
+        .hero-description {
+            max-width: 760px;
+            color: #b8c6d8;
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 19px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            transition: 0.25s;
+            font-weight: 650;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            border-color: rgba(77,163,255,0.45);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), var(--accent2));
+            border: none;
+        }
+
+        .profile-card {
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(77,163,255,0.10),
+                    rgba(124,92,255,0.08)
+                ),
+                var(--card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .profile-avatar {
+            width: 145px;
+            height: 145px;
+            border-radius: 50%;
+            margin: auto auto 22px;
+            display: grid;
+            place-items: center;
+            background:
+                linear-gradient(135deg, var(--accent), var(--accent2));
+            font-size: 3rem;
+            font-weight: 800;
+            box-shadow: 0 20px 50px rgba(77,163,255,0.18);
+        }
+
+        .profile-card h3 {
+            text-align: center;
+            font-size: 1.35rem;
+        }
+
+        .profile-card p {
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .profile-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 22px;
+        }
+
+        .profile-links a {
+            border: 1px solid var(--border);
+            padding: 10px;
+            border-radius: 9px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.85rem;
+            transition: 0.25s;
+        }
+
+        .profile-links a:hover {
+            color: white;
+            background: rgba(255,255,255,0.04);
+        }
+
+        /* ================= GENERAL ================= */
+
+        section {
+            padding: 95px 0;
+        }
+
+        .section-heading {
+            margin-bottom: 45px;
+        }
+
+        .section-label {
+            color: var(--accent);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            letter-spacing: -1.5px;
+        }
+
+        .section-heading p {
+            max-width: 720px;
+            color: var(--muted);
+            margin-top: 10px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .card {
+            background: rgba(15,29,48,0.76);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 26px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(77,163,255,0.28);
+            box-shadow: var(--shadow);
+        }
+
+        .card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 9px;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 13px;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about-text {
+            color: #bac7d7;
+            font-size: 1.02rem;
+        }
+
+        .about-text p {
+            margin-bottom: 17px;
+        }
+
+        .highlight {
+            color: white;
+            font-weight: 700;
+        }
+
+        /* ================= RESEARCH ================= */
+
+        .research-card {
+            min-height: 260px;
+        }
+
+        .research-card ul,
+        .project-card ul {
+            margin-top: 15px;
+            padding-left: 20px;
+            color: var(--muted);
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        /* ================= TIMELINE ================= */
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 9px;
+            top: 5px;
+            bottom: 5px;
+            width: 1px;
+            background: rgba(255,255,255,0.12);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 42px;
+            margin-bottom: 35px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 3px;
+            top: 7px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 15px rgba(77,163,255,0.45);
+        }
+
+        .timeline-date {
+            color: var(--accent);
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: rgba(77,163,255,0.06);
+            right: -35px;
+            top: -35px;
+        }
+
+        .project-category {
+            color: var(--accent);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 800;
+            margin-bottom: 9px;
+        }
+
+        .project-card h3 {
+            font-size: 1.3rem;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skill-group {
+            margin-bottom: 28px;
+        }
+
+        .skill-group h3 {
+            margin-bottom: 12px;
+            font-size: 1rem;
+            color: white;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .tag {
+            padding: 7px 11px;
+            background: rgba(255,255,255,0.045);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: #c7d3e2;
+            font-size: 0.83rem;
+        }
+
+        /* ================= PUBLICATIONS ================= */
+
+        .publication {
+            display: grid;
+            grid-template-columns: 55px 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .pub-number {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            background: rgba(77,163,255,0.10);
+            border: 1px solid rgba(77,163,255,0.18);
+            display: grid;
+            place-items: center;
+            color: var(--accent);
+            font-weight: 800;
+        }
+
+        .publication h3 {
+            margin-bottom: 7px;
+        }
+
+        .publication p {
+            color: var(--muted);
+        }
+
+        .pub-status {
+            display: inline-block;
+            margin-top: 9px;
+            font-size: 0.76rem;
+            padding: 4px 9px;
+            border-radius: 999px;
+            background: rgba(67,209,122,0.08);
+            color: var(--green);
+            border: 1px solid rgba(67,209,122,0.15);
+        }
+
+        /* ================= RESEARCH PIPELINE ================= */
+
+        .pipeline {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            align-items: stretch;
+        }
+
+        .pipeline-step {
+            text-align: center;
+            padding: 22px 10px;
+            border: 1px solid var(--border);
+            background: var(--card);
+            border-radius: 13px;
+        }
+
+        .pipeline-step strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .pipeline-step span {
+            color: var(--muted);
+            font-size: 0.78rem;
+        }
+
+        /* ================= EDUCATION ================= */
+
+        .education-card {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .education-icon {
+            min-width: 50px;
+            height: 50px;
+            border-radius: 13px;
+            background: rgba(124,92,255,0.10);
+            display: grid;
+            place-items: center;
+            font-size: 1.5rem;
+        }
+
+        .education-card h3 {
+            margin-bottom: 4px;
+        }
+
+        .education-card .meta {
+            color: var(--accent);
+            font-size: 0.86rem;
+            margin-bottom: 8px;
+        }
+
+        /* ================= STATS ================= */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .stat {
+            padding: 25px;
+            text-align: center;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .stat span {
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact-box {
+            text-align: center;
+            max-width: 850px;
+            margin: auto;
+            padding: 60px 30px;
+            border-radius: 25px;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(77,163,255,0.08),
+                    rgba(124,92,255,0.08)
+                ),
+                var(--card);
+            border: 1px solid var(--border);
+        }
+
+        .contact-box h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 12px;
+        }
+
+        .contact-box p {
+            color: var(--muted);
+            max-width: 650px;
+            margin: auto auto 25px;
+        }
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .socials a {
+            padding: 10px 15px;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            color: var(--muted);
+        }
+
+        .socials a:hover {
+            color: white;
+            border-color: var(--accent);
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 30px 0;
+            color: var(--muted);
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-card {
+                max-width: 430px;
+                margin: auto;
+            }
+
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pipeline {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            section {
+                padding: 70px 0;
+            }
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .pipeline {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .publication {
+                grid-template-columns: 1fr;
+            }
+
+            .pub-number {
+                display: none;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Hello, World!</h1>
-    <p>Welcome to my brand new website hosted on GitHub Pages.</p>
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav>
+    <div class="container nav-container">
+
+        <a href="#home" class="logo">
+            Md Shaharia <span>Hossen</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#robotics">Robotics</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<header class="hero" id="home">
+
+    <div class="container hero-grid">
+
+        <div>
+
+            <div class="eyebrow">
+                <span class="status-dot"></span>
+                Student Researcher · AI · Robotics
+            </div>
+
+            <h1>
+                Md Shaharia
+                <span class="gradient-text">Hossen</span>
+            </h1>
+
+            <h2>
+                AI & Robotics Researcher
+            </h2>
+
+            <p class="hero-description">
+                Computer Science and Engineering graduate and student researcher
+                working at the intersection of robotics, artificial intelligence,
+                computer vision, deep learning, computational biology, and
+                autonomous systems.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#research" class="btn btn-primary">
+                    Explore Research
+                </a>
+
+                <a href="#projects" class="btn">
+                    View Projects
+                </a>
+
+                <a href="https://github.com/Md-Shaharia-Hossen"
+                   target="_blank"
+                   class="btn">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-card">
+
+            <div class="profile-avatar">
+                SH
+            </div>
+
+            <h3>Md Shaharia Hossen</h3>
+
+            <p>
+                CSE Graduate · Student Researcher
+            </p>
+
+            <p>
+                ELITE Research Team
+            </p>
+
+            <div class="profile-links">
+
+                <a href="https://github.com/Md-Shaharia-Hossen"
+                   target="_blank">
+                    GitHub
+                </a>
+
+                <a href="https://orcid.org/0009-0009-8692-811X"
+                   target="_blank">
+                    ORCID
+                </a>
+
+                <a href="https://scholar.google.com/citations?user=IE9DWgQAAAAJ"
+                   target="_blank">
+                    Scholar
+                </a>
+
+                <a href="https://www.linkedin.com/"
+                   target="_blank">
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                About Me
+            </div>
+
+            <h2>
+                Research-driven engineering
+            </h2>
+
+            <p>
+                My work combines practical engineering with scientific research.
+            </p>
+
+        </div>
+
+
+        <div class="grid grid-2">
+
+            <div class="card about-text">
+
+                <p>
+                    I completed my <span class="highlight">
+                    B.Sc. in Computer Science and Engineering
+                    </span> from United International University (UIU),
+                    Bangladesh.
+                </p>
+
+                <p>
+                    My primary research interests are
+                    <span class="highlight">
+                    Robotics, Artificial Intelligence, Computer Vision,
+                    Deep Learning, Multi-Robot Systems, and AI for Biology.
+                    </span>
+                </p>
+
+                <p>
+                    I am currently involved with the
+                    <span class="highlight">
+                    ELITE Research Team / ELITE Research Lab
+                    </span>,
+                    where I work on interdisciplinary AI research involving
+                    spatial transcriptomics, graph neural networks,
+                    multiomics, and biological representation learning.
+                </p>
+
+                <p>
+                    My long-term goal is to work as an
+                    <span class="highlight">
+                    AI and Robotics Engineer
+                    </span>
+                    developing intelligent autonomous systems.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Research Philosophy</h3>
+
+                <p style="margin-top:15px;">
+                    I am interested in research problems where perception,
+                    learning, and autonomous decision-making interact.
+                </p>
+
+                <div class="tags" style="margin-top:20px;">
+
+                    <span class="tag">Robotics</span>
+                    <span class="tag">AI</span>
+                    <span class="tag">Computer Vision</span>
+                    <span class="tag">Deep Learning</span>
+                    <span class="tag">ROS2</span>
+                    <span class="tag">Multi-Robot Systems</span>
+                    <span class="tag">GNN</span>
+                    <span class="tag">Multiomics</span>
+                    <span class="tag">Spatial Transcriptomics</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     RESEARCH INTERESTS
+========================================================= -->
+
+<section id="research">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Research
+            </div>
+
+            <h2>
+                Research interests
+            </h2>
+
+            <p>
+                Interdisciplinary research connecting intelligent machines,
+                machine learning, perception, and biological data.
+            </p>
+
+        </div>
+
+
+        <div class="grid grid-3">
+
+            <div class="card research-card">
+
+                <div class="icon">🤖</div>
+
+                <h3>Robotics</h3>
+
+                <p>
+                    Autonomous robots, multi-robot systems, navigation,
+                    localization, SLAM, exploration, and intelligent
+                    decision-making.
+                </p>
+
+                <ul>
+                    <li>ROS / ROS2</li>
+                    <li>Multi-Robot Systems</li>
+                    <li>SLAM & Navigation</li>
+                    <li>Planetary Robotics</li>
+                    <li>Trust-aware Robotics</li>
+                </ul>
+
+            </div>
+
+
+            <div class="card research-card">
+
+                <div class="icon">🧠</div>
+
+                <h3>Artificial Intelligence</h3>
+
+                <p>
+                    Deep learning and representation learning for perception,
+                    prediction, classification, and scientific discovery.
+                </p>
+
+                <ul>
+                    <li>Deep Learning</li>
+                    <li>Autoencoders</li>
+                    <li>Graph Neural Networks</li>
+                    <li>Machine Learning</li>
+                    <li>Reinforcement Learning</li>
+                </ul>
+
+            </div>
+
+
+            <div class="card research-card">
+
+                <div class="icon">👁️</div>
+
+                <h3>Computer Vision</h3>
+
+                <p>
+                    Vision-based intelligent systems for robotics, traffic
+                    monitoring, medical applications, and automation.
+                </p>
+
+                <ul>
+                    <li>Object Detection</li>
+                    <li>Instance Segmentation</li>
+                    <li>YOLO</li>
+                    <li>Detectron2</li>
+                    <li>OpenCV</li>
+                </ul>
+
+            </div>
+
+
+            <div class="card research-card">
+
+                <div class="icon">🧬</div>
+
+                <h3>Computational Biology</h3>
+
+                <p>
+                    AI methods for single-cell multiomics, cancer genomics,
+                    spatial transcriptomics, and biological representation
+                    learning.
+                </p>
+
+                <ul>
+                    <li>Single-cell Multiomics</li>
+                    <li>Spatial Transcriptomics</li>
+                    <li>Gene Expression</li>
+                    <li>Cell-type Identification</li>
+                    <li>Graph Learning</li>
+                </ul>
+
+            </div>
+
+
+            <div class="card research-card">
+
+                <div class="icon">🔌</div>
+
+                <h3>IoT & Embedded Systems</h3>
+
+                <p>
+                    Sensor-driven intelligent systems using embedded
+                    controllers and connected devices.
+                </p>
+
+                <ul>
+                    <li>ESP32</li>
+                    <li>Sensor Integration</li>
+                    <li>IoT</li>
+                    <li>Serial Communication</li>
+                    <li>Automation</li>
+                </ul>
+
+            </div>
+
+
+            <div class="card research-card">
+
+                <div class="icon">🏭</div>
+
+                <h3>Intelligent Automation</h3>
+
+                <p>
+                    AI-enabled automation, machine vision, precision systems,
+                    and robotics for real-world applications.
+                </p>
+
+                <ul>
+                    <li>Machine Vision</li>
+                    <li>Industrial Robotics</li>
+                    <li>Precision Automation</li>
+                    <li>Autonomous Systems</li>
+                    <li>Smart Manufacturing</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     RESEARCH PIPELINE
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Research Workflow
+            </div>
+
+            <h2>
+                From problem to experiment
+            </h2>
+
+        </div>
+
+        <div class="pipeline">
+
+            <div class="pipeline-step">
+                <strong>01</strong>
+                <span>Problem</span>
+            </div>
+
+            <div class="pipeline-step">
+                <strong>02</strong>
+                <span>Data / System</span>
+            </div>
+
+            <div class="pipeline-step">
+                <strong>03</strong>
+                <span>Model / Algorithm</span>
+            </div>
+
+            <div class="pipeline-step">
+                <strong>04</strong>
+                <span>Experiment</span>
+            </div>
+
+            <div class="pipeline-step">
+                <strong>05</strong>
+                <span>Analysis</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ROBOTICS
+========================================================= -->
+
+<section id="robotics">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Robotics
+            </div>
+
+            <h2>
+                Robotics experience
+            </h2>
+
+            <p>
+                Hands-on experience ranging from embedded sensors and ROS
+                systems to autonomous rover simulation and multi-robot research.
+            </p>
+
+        </div>
+
+
+        <div class="grid grid-2">
+
+            <div class="card project-card">
+
+                <div class="project-category">
+                    Mars Rover
+                </div>
+
+                <h3>
+                    UIU Mars Rover Team
+                </h3>
+
+                <p>
+                    Member of the UIU Mars Rover Team since 2022, with
+                    experience in autonomous and navigation systems.
+                </p>
+
+                <ul>
+                    <li>URC 2024 Autonomous & Navigation</li>
+                    <li>ROS1 Noetic</li>
+                    <li>Robot localization</li>
+                    <li>Navigation</li>
+                    <li>Sensor integration</li>
+                    <li>Computer vision</li>
+                    <li>ESP32 integration</li>
+                </ul>
+
+            </div>
+
+
+            <div class="card project-card">
+
+                <div class="project-category">
+                    ROS2 Research
+                </div>
+
+                <h3>
+                    Multi-Robot Trust Fusion
+                </h3>
+
+                <p>
+                    ROS2-based multi-rover research environment focused on
+                    trust-aware information fusion and autonomous exploration.
+                </p>
+
+                <ul>
+                    <li>ROS2 Jazzy</li>
+                    <li>Gazebo</li>
+                    <li>Nav2</li>
+                    <li>SLAM Toolbox</li>
+                    <li>Custom ROS2 messages</li>
+                    <li>Multi-robot coordination</li>
+                    <li>Energy-aware exploration</li>
+                </ul>
+
+            </div>
+
+
+            <div class="card project-card">
+
+                <div class="project-category">
+                    Autonomous Systems
+                </div>
+
+                <h3>
+                    Adaptive Multi-Robot Barrier Coverage
+                </h3>
+
+                <p>
+                    Simulation-oriented research involving multiple robots,
+                    dynamic target distributions, and adaptive coverage.
+                </p>
+
+                <ul>
+                    <li>50 × 50 grid</li>
+                    <li>5 robots</li>
+                    <li>100 time steps</li>
+                    <li>Time-varying λ(q,t)</li>
+                    <li>σ = 4</li>
+                    <li>Mathematical modeling</li>
+                </ul>
+
+            </div>
+
+
+            <div class="card project-card">
+
+                <div class="project-category">
+                    ROS / Embedded
+                </div>
+
+                <h3>
+                    Rover Sensor & Control Systems
+                </h3>
+
+                <p>
+                    Practical integration of embedded sensors, ROS nodes,
+                    serial communication, camera systems, and robot control.
+                </p>
+
+                <ul>
+                    <li>ESP32</li>
+                    <li>Ultrasonic sensors</li>
+                    <li>IP Camera</li>
+                    <li>Python / rospy</li>
+                    <li>C++</li>
+                    <li>ROS topics</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FEATURED PROJECTS
+========================================================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Projects
+            </div>
+
+            <h2>
+                Selected projects & research systems
+            </h2>
+
+        </div>
+
+
+        <div class="grid grid-2">
+
+
+            <!-- Project 1 -->
+
+            <div class="card project-card">
+
+                <div class="project-category">
+                    Deep Learning · Computational Biology
+                </div>
+
+                <h3>
+                    IntegraDenoNet
+                </h3>
+
+                <p>
+                    A deep-learning framework for single-cell multiomics
+                    integration and cell-type identification.
+                </p>
+
+                <ul>
+                    <li>DNA methylation</li>
+                    <li>mRNA</li>
+                    <li>miRNA</li>
+                    <li>Denoising Autoencoder</li>
+                    <li>PCA</li>
+                    <li>HDBSCAN</li>
+                    <li>Latent representation learning</li>
+                </ul>
+
+            </div>
+
+
+            <!-- Project 2 -->
+
+            <div class="card project-card">
+
+                <div class="project-category">
+                    Spatial Transcriptomics · GNN
+                </div>
+
+                <h3>
+                    Layer-wise Analysis of Molecular and Spatial Information
+                </h3>
+
+                <p>
+                    Research investigating how molecular and spatial
+                    information evolves across layers of graph models for
+                    spatial transcriptomics.
+                </p>
+
+                <ul>
+                    <li>GAT</li>
+                    <li>GATv2</li>
+                    <li>GraphGPS</li>
+                    <li>Exphormer</li>
+                    <li>CKA analysis</li>
+                    <li>Spatial metrics</li>
+                    <li>LOBO evaluation</li>
+                </ul>
+
+            </div>
+
+
+            <!-- Project 3 -->
+
+            <div class="card project-card">
+
+                <div class="project-category">
+                    Robotics · Computer Vision
+                </div>
+
+                <h3>
+                    WasteSortBot
+                </h3>
+
+                <p>
+                    Automated waste-management research combining computer
+                    vision, robotics, ROS, and cloud-based processing.
+                </p>
+
+                <ul>
+                    <li>YOLO</li>
+                    <li>Food waste detection</li>
+                    <li>Plastic detection</li>
+                    <li>ROS</li>
+                    <li>Cloud integration</li>
+                    <li>Automated sorting</li>
+                </ul>
+
+            </div>
+
+
+            <!-- Project 4 -->
+
+            <div class="card project-card">
+
+                <div class="project-category">
+                    Computer Vision
+                </div>
+
+                <h3>
+                    Motorcycle Rider & Helmet Detection
+                </h3>
+
+                <p>
+                    Vision-based system for rider and helmet detection and
+                    segmentation in challenging traffic environments.
+                </p>
+
+                <ul>
+                    <li>YOLOv9</li>
+                    <li>VGG16</li>
+                    <li>Segmentation</li>
+                    <li>Occlusion handling</li>
+                    <li>Illumination variation</li>
+                    <li>Crowded scenes</li>
+                </ul>
+
+            </div>
+
+
+            <!-- Project 5 -->
+
+            <div class="card project-card">
+
+                <div class="project-category">
+                    Medical AI
+                </div>
+
+                <h3>
+                    GreenMed Detectron2
+                </h3>
+
+                <p>
+                    Medical object detection and segmentation using
+                    Detectron2 and Mask R-CNN.
+                </p>
+
+                <ul>
+                    <li>Detectron2</li>
+                    <li>Mask R-CNN</li>
+                    <li>Roboflow dataset</li>
+                    <li>Prescription detection</li>
+                    <li>Medical strip detection</li>
+                    <li>Instance segmentation</li>
+                </ul>
+
+            </div>
+
+
+            <!-- Project 6 -->
+
+            <div class="card project-card">
+
+                <div class="project-category">
+                    IoT · Embedded Systems
+                </div>
+
+                <h3>
+                    Smart Water Management System
+                </h3>
+
+                <p>
+                    ESP32-based water monitoring and automated distribution
+                    system.
+                </p>
+
+                <ul>
+                    <li>Water-level sensing</li>
+                    <li>pH monitoring</li>
+                    <li>Solenoid valve</li>
+                    <li>Payment system</li>
+                    <li>Gallon control</li>
+                    <li>Clean-water scheduling</li>
+                </ul>
+
+            </div>
+
+
+            <!-- Project 7 -->
+
+            <div class="card project-card">
+
+                <div class="project-category">
+                    AI · Healthcare
+                </div>
+
+                <h3>
+                    AIScribe — AI Clinical Note Taking
+                </h3>
+
+                <p>
+                    Research concept exploring automatic clinical note
+                    generation from doctor-patient conversations.
+                </p>
+
+                <ul>
+                    <li>Speech-to-text</li>
+                    <li>Clinical NLP</li>
+                    <li>Information extraction</li>
+                    <li>Structured note generation</li>
+                    <li>Reinforcement learning</li>
+                    <li>Reward design</li>
+                </ul>
+
+            </div>
+
+
+            <!-- Project 8 -->
+
+            <div class="card project-card">
+
+                <div class="project-category">
+                    AI · Information Retrieval
+                </div>
+
+                <h3>
+                    Search in Transition
+                </h3>
+
+                <p>
+                    Research exploring how information retrieval and search
+                    behavior are changing in the era of modern AI systems.
+                </p>
+
+                <ul>
+                    <li>Information Retrieval</li>
+                    <li>AI Search</li>
+                    <li>LLMs</li>
+                    <li>Search behavior</li>
+                    <li>Research analysis</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     MULTIOMICS DETAILS
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Computational Biology
+            </div>
+
+            <h2>
+                Multiomics research
+            </h2>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                IntegraDenoNet — Multiomics Integration
+            </h3>
+
+            <p style="margin-top:12px;">
+                The project integrates multiple molecular modalities to learn
+                compact representations for downstream biological analysis.
+            </p>
+
+
+            <div class="grid grid-3" style="margin-top:25px;">
+
+                <div>
+
+                    <strong>Datasets</strong>
+
+                    <div class="tags" style="margin-top:10px;">
+                        <span class="tag">BRCA</span>
+                        <span class="tag">TCGA</span>
+                        <span class="tag">ROSMAP</span>
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <strong>Modalities</strong>
+
+                    <div class="tags" style="margin-top:10px;">
+                        <span class="tag">mRNA</span>
+                        <span class="tag">miRNA</span>
+                        <span class="tag">Methylation</span>
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <strong>Methods</strong>
+
+                    <div class="tags" style="margin-top:10px;">
+                        <span class="tag">DAE</span>
+                        <span class="tag">PCA</span>
+                        <span class="tag">HDBSCAN</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div style="margin-top:30px;">
+
+                <h3>
+                    Example architecture
+                </h3>
+
+                <div class="pipeline" style="margin-top:15px;">
+
+                    <div class="pipeline-step">
+                        <strong>2503</strong>
+                        <span>Integrated features</span>
+                    </div>
+
+                    <div class="pipeline-step">
+                        <strong>512</strong>
+                        <span>Encoder</span>
+                    </div>
+
+                    <div class="pipeline-step">
+                        <strong>256</strong>
+                        <span>Encoder</span>
+                    </div>
+
+                    <div class="pipeline-step">
+                        <strong>128</strong>
+                        <span>Encoder</span>
+                    </div>
+
+                    <div class="pipeline-step">
+                        <strong>64</strong>
+                        <span>Latent space</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     EDUCATION
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Education
+            </div>
+
+            <h2>
+                Academic background
+            </h2>
+
+        </div>
+
+
+        <div class="grid grid-2">
+
+            <div class="card education-card">
+
+                <div class="education-icon">
+                    🎓
+                </div>
+
+                <div>
+
+                    <h3>
+                        B.Sc. in Computer Science and Engineering
+                    </h3>
+
+                    <div class="meta">
+                        United International University · Bangladesh
+                    </div>
+
+                    <p>
+                        CGPA: 3.14 / 4.00
+                    </p>
+
+                    <p>
+                        Received trimester-wise scholarship four times.
+                    </p>
+
+                    <p>
+                        Project Management: A− / 3.67
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card education-card">
+
+                <div class="education-icon">
+                    📚
+                </div>
+
+                <div>
+
+                    <h3>
+                        Academic & Research Development
+                    </h3>
+
+                    <div class="meta">
+                        Independent & Laboratory Research
+                    </div>
+
+                    <p>
+                        Developed practical experience through robotics,
+                        computer vision, deep learning, computational biology,
+                        and interdisciplinary research projects.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PUBLICATIONS
+========================================================= -->
+
+<section id="publications">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Publications
+            </div>
+
+            <h2>
+                Research publications
+            </h2>
+
+            <p>
+                Research across robotics, computer vision, artificial
+                intelligence, and computational biology.
+            </p>
+
+        </div>
+
+
+        <div class="grid">
+
+
+            <div class="card publication">
+
+                <div class="pub-number">
+                    01
+                </div>
+
+                <div>
+
+                    <h3>
+                        IntegraDenoNet: A Deep Learning Based Single Cell
+                        Multiomics Integration and Cell Type Identification
+                    </h3>
+
+                    <p>
+                        Deep learning framework for integrating single-cell
+                        multiomics data and learning representations for
+                        biological analysis and cell-type identification.
+                    </p>
+
+                    <span class="pub-status">
+                        Published research
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="card publication">
+
+                <div class="pub-number">
+                    02
+                </div>
+
+                <div>
+
+                    <h3>
+                        Layer-wise Analysis of Molecular and Spatial
+                        Information in Graph Models for Spatial Transcriptomics
+                    </h3>
+
+                    <p>
+                        ELITE Research Lab work investigating the layer-wise
+                        behavior of graph models with respect to molecular and
+                        spatial information in spatial transcriptomics.
+                    </p>
+
+                    <span class="pub-status">
+                        Research project · 2026
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="card publication">
+
+                <div class="pub-number">
+                    03
+                </div>
+
+                <div>
+
+                    <h3>
+                        Motorcycle Rider and Helmet Detection & Segmentation
+                    </h3>
+
+                    <p>
+                        Computer vision research addressing rider and helmet
+                        detection under occlusion, illumination variation,
+                        crowded scenes, and scale variation.
+                    </p>
+
+                    <span class="pub-status">
+                        Conference research
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="card publication">
+
+                <div class="pub-number">
+                    04
+                </div>
+
+                <div>
+
+                    <h3>
+                        WasteSortBot — Intelligent Waste Management
+                    </h3>
+
+                    <p>
+                        Robotics and computer vision research combining object
+                        detection, ROS, cloud processing, and automated waste
+                        sorting.
+                    </p>
+
+                    <span class="pub-status">
+                        Robotics research
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     RESEARCH REVIEWING
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Academic Service
+            </div>
+
+            <h2>
+                Reviewing & scholarly activity
+            </h2>
+
+        </div>
+
+
+        <div class="grid grid-3">
+
+            <div class="card">
+
+                <div class="icon">📄</div>
+
+                <h3>
+                    IEEE Access
+                </h3>
+
+                <p>
+                    Peer reviewer for research manuscripts submitted to
+                    IEEE Access.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🏛️</div>
+
+                <h3>
+                    AOM 2026
+                </h3>
+
+                <p>
+                    Reviewer for the Academy of Management Annual Meeting 2026,
+                    Technology & Innovation Management.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🧬</div>
+
+                <h3>
+                    Editorial Board
+                </h3>
+
+                <p>
+                    Invited voluntary editorial-board member for
+                    Metabolic Systems Biology and Omics.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SKILLS
+========================================================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Technical Skills
+            </div>
+
+            <h2>
+                Tools & technologies
+            </h2>
+
+        </div>
+
+
+        <div class="grid grid-2">
+
+
+            <div class="card">
+
+                <div class="skill-group">
+
+                    <h3>Programming</h3>
+
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">C++</span>
+                        <span class="tag">C</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">SQL</span>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-group">
+
+                    <h3>Robotics</h3>
+
+                    <div class="tags">
+                        <span class="tag">ROS</span>
+                        <span class="tag">ROS2</span>
+                        <span class="tag">Gazebo</span>
+                        <span class="tag">RViz</span>
+                        <span class="tag">Nav2</span>
+                        <span class="tag">SLAM Toolbox</span>
+                        <span class="tag">rospy</span>
+                        <span class="tag">URDF</span>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-group">
+
+                    <h3>Embedded & IoT</h3>
+
+                    <div class="tags">
+                        <span class="tag">ESP32</span>
+                        <span class="tag">Sensors</span>
+                        <span class="tag">Serial Communication</span>
+                        <span class="tag">IoT</span>
+                        <span class="tag">Automation</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="skill-group">
+
+                    <h3>AI / Machine Learning</h3>
+
+                    <div class="tags">
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">Deep Learning</span>
+                        <span class="tag">Autoencoders</span>
+                        <span class="tag">GNN</span>
+                        <span class="tag">Reinforcement Learning</span>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-group">
+
+                    <h3>Computer Vision</h3>
+
+                    <div class="tags">
+                        <span class="tag">OpenCV</span>
+                        <span class="tag">YOLO</span>
+                        <span class="tag">YOLOv9</span>
+                        <span class="tag">Detectron2</span>
+                        <span class="tag">Mask R-CNN</span>
+                        <span class="tag">VGG16</span>
+                    </div>
+
+                </div>
+
+
+                <div class="skill-group">
+
+                    <h3>Data / Scientific Computing</h3>
+
+                    <div class="tags">
+                        <span class="tag">NumPy</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">SciPy</span>
+                        <span class="tag">PCA</span>
+                        <span class="tag">HDBSCAN</span>
+                        <span class="tag">Jupyter</span>
+                        <span class="tag">Google Colab</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TOOLS
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Development Environment
+            </div>
+
+            <h2>
+                Tools I work with
+            </h2>
+
+        </div>
+
+
+        <div class="tags">
+
+            <span class="tag">Linux</span>
+            <span class="tag">Ubuntu 20.04</span>
+            <span class="tag">Ubuntu 24.04</span>
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Jupyter</span>
+            <span class="tag">Google Colab</span>
+            <span class="tag">LaTeX</span>
+            <span class="tag">Gazebo</span>
+            <span class="tag">RViz</span>
+            <span class="tag">Roboflow</span>
+            <span class="tag">Detectron2</span>
+            <span class="tag">ROS</span>
+            <span class="tag">ROS2</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     EXPERIENCE TIMELINE
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Journey
+            </div>
+
+            <h2>
+                Research & robotics journey
+            </h2>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    2022 →
+                </div>
+
+                <h3>
+                    UIU Mars Rover Team
+                </h3>
+
+                <p>
+                    Joined the robotics team and developed practical
+                    experience with rover systems, ROS, sensors,
+                    navigation, and autonomous robotics.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    2024
+                </div>
+
+                <h3>
+                    Autonomous & Navigation Research
+                </h3>
+
+                <p>
+                    Worked on rover autonomy, navigation, localization,
+                    computer vision, and ROS-based robotic systems.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    2024 →
+                </div>
+
+                <h3>
+                    AI & Computer Vision Research
+                </h3>
+
+                <p>
+                    Expanded into object detection, segmentation,
+                    medical AI, traffic monitoring, and intelligent
+                    robotic perception.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    2025 →
+                </div>
+
+                <h3>
+                    Computational Biology
+                </h3>
+
+                <p>
+                    Began interdisciplinary research in single-cell
+                    multiomics, deep learning, and biological
+                    representation learning.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    2026
+                </div>
+
+                <h3>
+                    ELITE Research Team
+                </h3>
+
+                <p>
+                    Working on spatial transcriptomics, graph neural
+                    networks, molecular-spatial representation analysis,
+                    and advanced AI research.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-dot"></div>
+
+                <div class="timeline-date">
+                    Current Direction
+                </div>
+
+                <h3>
+                    AI + Robotics
+                </h3>
+
+                <p>
+                    Continuing toward intelligent autonomous systems,
+                    multi-robot systems, robotics research, and
+                    AI-driven scientific applications.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     RESEARCH STATISTICS
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Snapshot
+            </div>
+
+            <h2>
+                Portfolio at a glance
+            </h2>
+
+        </div>
+
+
+        <div class="stats">
+
+            <div class="stat">
+                <strong>1</strong>
+                <span>B.Sc. Degree</span>
+            </div>
+
+            <div class="stat">
+                <strong>5+</strong>
+                <span>Research Works</span>
+            </div>
+
+            <div class="stat">
+                <strong>2+</strong>
+                <span>Research Domains</span>
+            </div>
+
+            <div class="stat">
+                <strong>ROS</strong>
+                <span>Robotics Platform</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CURRENT RESEARCH
+========================================================= -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Current Focus
+            </div>
+
+            <h2>
+                What I am working toward
+            </h2>
+
+        </div>
+
+
+        <div class="grid grid-3">
+
+
+            <div class="card">
+
+                <div class="icon">🤖</div>
+
+                <h3>
+                    Autonomous Robotics
+                </h3>
+
+                <p>
+                    Developing knowledge in multi-robot coordination,
+                    autonomous navigation, trust-aware systems,
+                    exploration, and robot perception.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🧠</div>
+
+                <h3>
+                    AI for Robotics
+                </h3>
+
+                <p>
+                    Combining machine learning and computer vision with
+                    robotic perception and decision-making.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🔬</div>
+
+                <h3>
+                    AI for Scientific Discovery
+                </h3>
+
+                <p>
+                    Applying deep learning and graph-based methods to
+                    biological and scientific datasets.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <div class="section-label">
+                Contact
+            </div>
+
+            <h2>
+                Let's build intelligent systems.
+            </h2>
+
+            <p>
+                I am interested in research collaborations, robotics,
+                AI/ML projects, graduate research opportunities, and
+                interdisciplinary scientific work.
+            </p>
+
+            <div class="socials">
+
+                <a href="https://github.com/Md-Shaharia-Hossen"
+                   target="_blank">
+                    GitHub
+                </a>
+
+                <a href="https://orcid.org/0009-0009-8692-811X"
+                   target="_blank">
+                    ORCID
+                </a>
+
+                <a href="https://scholar.google.com/citations?user=IE9DWgQAAAAJ"
+                   target="_blank">
+                    Google Scholar
+                </a>
+
+                <a href="https://www.linkedin.com/"
+                   target="_blank">
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <p>
+            © 2026 Md Shaharia Hossen.
+            Built for research, robotics, and intelligent systems.
+        </p>
+
+        <p style="margin-top:6px;">
+            AI · Robotics · Computer Vision · Deep Learning · Computational Biology
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     SIMPLE JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    // Highlight navigation links while scrolling
+    const sections = document.querySelectorAll("section, header");
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    window.addEventListener("scroll", () => {
+
+        let current = "";
+
+        sections.forEach(section => {
+
+            const sectionTop = section.offsetTop - 120;
+
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute("id");
+            }
+
+        });
+
+        navLinks.forEach(link => {
+
+            link.style.color = "";
+
+            if (link.getAttribute("href") === "#" + current) {
+                link.style.color = "#4da3ff";
+            }
+
+        });
+
+    });
+
+
+    // Reveal cards when they enter the viewport
+    const cards = document.querySelectorAll(".card");
+
+    const observer = new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.08
+        }
+    );
+
+
+    cards.forEach(card => {
+
+        card.style.opacity = "0";
+        card.style.transform = "translateY(20px)";
+        card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+
+        observer.observe(card);
+
+    });
+
+</script>
+
 </body>
 </html>
+```
