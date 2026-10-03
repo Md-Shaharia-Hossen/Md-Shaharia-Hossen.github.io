@@ -701,6 +701,145 @@
             color: var(--muted);
         }
 
+        /* =====================================================
+   HONORS & RECOGNITION
+===================================================== */
+
+.honors-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.honors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 45px;
+}
+
+.honor-card {
+    position: relative;
+    overflow: hidden;
+    background: rgba(8, 21, 37, 0.85);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.honor-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(77, 163, 255, 0.45);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.honor-image-wrapper {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #0b1828;
+}
+
+.honor-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.honor-card:hover .honor-image {
+    transform: scale(1.06);
+}
+
+.honor-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(3, 16, 30, 0.72);
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.honor-card:hover .honor-overlay {
+    opacity: 1;
+}
+
+.honor-overlay span {
+    padding: 10px 16px;
+    border: 1px solid rgba(77, 163, 255, 0.5);
+    border-radius: 999px;
+    color: #fff;
+    background: rgba(77, 163, 255, 0.12);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.honor-content {
+    padding: 22px;
+}
+
+.honor-year {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.honor-content h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 20px;
+    line-height: 1.25;
+    margin-bottom: 12px;
+}
+
+.honor-content p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.honor-organization {
+    color: #b9cce0;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   HONOR RESPONSIVE
+========================= */
+
+@media (max-width: 950px) {
+
+    .honors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .honors-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .honor-content {
+        padding: 20px;
+    }
+
+}
+
         /* =========================
            SKILLS
         ========================= */
@@ -1043,7 +1182,7 @@
                 <p>
                     Contributed to autonomous robotics and navigation activities,
                     gaining hands-on experience with robotic systems, sensors,
-                    ROS, perception and autonomous rover development.
+                    ROS, perception, and autonomous rover development.
                 </p>
 
             </div>
@@ -1063,7 +1202,7 @@
 
                 <p>
                     Participated as a member of the Autonomous & Navigation
-                    sub-team, working on robotics, navigation and autonomous
+                    sub-team, working on robotics, navigation, and autonomous
                     rover-related activities for international competition.
                 </p>
 
@@ -1189,7 +1328,7 @@
                        target="_blank">
 
                         Automated Waste Management: A Deep Learning and
-                        Cloud Based Food & Plastic Waste Separator Bin
+                        Cloud-Based Food & Plastic Waste Separator Bin
 
                     </a>
 
@@ -1421,6 +1560,129 @@
 
 </section>
 
+
+
+
+<!-- =====================================================
+     HONORS & RECOGNITION
+===================================================== -->
+
+<section class="section honors-section" id="honors">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="section-kicker">Recognition</span>
+            <h2>Honors & Recognition</h2>
+            <p>
+                Selected achievements, recognitions, and honors from my
+                academic and research journey.
+            </p>
+        </div>
+
+        <div class="honors-grid">
+
+            <!-- HONOR 1 -->
+            <article class="honor-card">
+
+                <div class="honor-image-wrapper">
+                    <img
+                        src="honor-1.jpg"
+                        alt="Honor and recognition"
+                        class="honor-image"
+                    >
+                    <div class="honor-overlay">
+                        <span>View Recognition ↗</span>
+                    </div>
+                </div>
+
+                <div class="honor-content">
+                    <span class="honor-year">2026</span>
+
+                    <h3>Honor / Achievement Title</h3>
+
+                    <p>
+                        Short description of the recognition, award,
+                        achievement, or contribution.
+                    </p>
+
+                    <span class="honor-organization">
+                        Organization / Institution
+                    </span>
+                </div>
+
+            </article>
+
+
+            <!-- HONOR 2 -->
+            <article class="honor-card">
+
+                <div class="honor-image-wrapper">
+                    <img
+                        src="honor-2.jpg"
+                        alt="Honor and recognition"
+                        class="honor-image"
+                    >
+                    <div class="honor-overlay">
+                        <span>View Recognition ↗</span>
+                    </div>
+                </div>
+
+                <div class="honor-content">
+                    <span class="honor-year">2025</span>
+
+                    <h3>Honor / Achievement Title</h3>
+
+                    <p>
+                        Short description of the recognition, award,
+                        achievement, or contribution.
+                    </p>
+
+                    <span class="honor-organization">
+                        Organization / Institution
+                    </span>
+                </div>
+
+            </article>
+
+
+            <!-- HONOR 3 -->
+            <article class="honor-card">
+
+                <div class="honor-image-wrapper">
+                    <img
+                        src="honor-3.jpg"
+                        alt="Honor and recognition"
+                        class="honor-image"
+                    >
+                    <div class="honor-overlay">
+                        <span>View Recognition ↗</span>
+                    </div>
+                </div>
+
+                <div class="honor-content">
+                    <span class="honor-year">2024</span>
+
+                    <h3>Honor / Achievement Title</h3>
+
+                    <p>
+                        Short description of the recognition, award,
+                        achievement, or contribution.
+                    </p>
+
+                    <span class="honor-organization">
+                        Organization / Institution
+                    </span>
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+    
 
 <!-- =====================================================
      RESEARCH INTERESTS
