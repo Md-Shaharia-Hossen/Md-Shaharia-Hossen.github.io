@@ -220,6 +220,221 @@
             background: rgba(255,255,255,0.07);
         }
 
+        /* =====================================================
+   ROVER VIDEO DEMONSTRATION
+===================================================== */
+
+.rover-video-feature {
+    margin-top: 45px;
+    padding: 26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(77,163,255,0.07),
+            rgba(66,211,146,0.025)
+        );
+
+    border: 1px solid rgba(77,163,255,0.18);
+    border-radius: 22px;
+
+    box-shadow: var(--shadow);
+}
+
+
+/* Header */
+
+.rover-video-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 25px;
+    margin-bottom: 22px;
+}
+
+.rover-video-kicker {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--green);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.rover-video-header h3 {
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(24px, 3vw, 32px);
+
+    margin-bottom: 10px;
+}
+
+.rover-video-header p {
+    max-width: 750px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* Duration */
+
+.rover-video-duration {
+    flex-shrink: 0;
+
+    padding: 8px 12px;
+
+    border: 1px solid rgba(66,211,146,0.25);
+    border-radius: 999px;
+
+    background: rgba(66,211,146,0.06);
+
+    color: var(--green);
+
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* Video */
+
+.rover-video-player {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    background: #020a12;
+
+    border: 1px solid rgba(77,163,255,0.2);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,0.35);
+}
+
+.rover-video-player video {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    background: #020a12;
+}
+
+
+/* Technical overlay */
+
+.video-tech-overlay {
+    position: absolute;
+
+    top: 13px;
+    left: 13px;
+
+    padding: 7px 10px;
+
+    border-radius: 6px;
+
+    background: rgba(2,10,18,0.78);
+
+    border: 1px solid rgba(77,163,255,0.25);
+
+    color: #b9d8f5;
+
+    font-family: monospace;
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+    pointer-events: none;
+}
+
+
+/* Caption */
+
+.rover-video-caption {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 18px;
+}
+
+.rover-video-caption strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 14px;
+}
+
+.rover-video-caption span {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* Tags */
+
+.rover-video-tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+.rover-video-tags span {
+    padding: 6px 9px;
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    background: rgba(255,255,255,0.025);
+
+    color: #b8cce0;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .rover-video-feature {
+        padding: 18px;
+    }
+
+    .rover-video-header {
+        flex-direction: column;
+    }
+
+    .rover-video-caption {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .video-tech-overlay {
+        display: none;
+    }
+
+}
+
         /* =========================
            PROFILE PHOTO
         ========================= */
@@ -1773,7 +1988,72 @@
     </div>
 
 </section>
+<!-- =====================================================
+     ROVER VIDEO DEMONSTRATION
+===================================================== -->
 
+<div class="rover-video-feature">
+
+    <div class="rover-video-header">
+
+        <div>
+            <span class="rover-video-kicker">
+                UIU Mars Rover · 2023
+            </span>
+
+            <h3>Rover Navigation Simulation</h3>
+
+            <p>
+                A short demonstration of a simulated rover navigating
+                in RViz using Nav2 and odometry-based navigation,
+                completed as part of my UIU Mars Rover internship task.
+            </p>
+        </div>
+
+        <span class="rover-video-duration">
+            40 SEC
+        </span>
+
+    </div>
+
+    <div class="rover-video-player">
+
+        <video
+            controls
+            playsinline
+            preload="metadata"
+        >
+            <source
+                src="WhatsApp Video 2026-10-04 at 12.21.07 PM.mp4"
+                type="video/mp4"
+            >
+
+            Your browser does not support HTML5 video.
+        </video>
+
+        <div class="video-tech-overlay">
+            ROS · RViz · Nav2 · ODOMETRY
+        </div>
+
+    </div>
+
+    <div class="rover-video-caption">
+
+        <div>
+            <strong>Autonomous Rover Simulation</strong>
+            <span>UIU Mars Rover Internship Task · 2023</span>
+        </div>
+
+        <div class="rover-video-tags">
+            <span>ROS</span>
+            <span>RViz</span>
+            <span>Nav2</span>
+            <span>Odometry</span>
+        </div>
+
+    </div>
+
+</div>
 
 <!-- =====================================================
      FORMER MARS ROVER TEAM
